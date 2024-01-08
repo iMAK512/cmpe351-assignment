@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#define MAXIMUM_LINES 1088
+#define MAXIMUM_LINES 1024
 
 
 
@@ -20,5 +20,5 @@ linkedList;
 
 void nonpreemptive ( struct linkedlist process[] )
      {
-           File *frprt;
-           fptr = fopen("output.txt", "a");
+           File *fptr;
+           fptr = fopen("output.txt", "A");
