@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#define MAXIMUM_LINES 1024
+
+
+
+
+struct linkedList{
+
+         int arrivalTime; //Arrival time 
+         int waitingTime; //waiting time
+         int burstTime; //burst time
+         int Name;
+         int result; //show result
+         int prt; //priority
+}
+
+linkedList;
