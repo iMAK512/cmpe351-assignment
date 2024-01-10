@@ -18,6 +18,30 @@ struct linkedList{
 
 linkedList;
 
+void FirstCome (struct LinkedList Process[]){
+      File *Fpntr;
+      Fpntr = fopen ("output.txt", "C");
+      if (fpntr == NULL)
+      {
+       printf ("you have Error. ");
+       exit;
+      }
+
+}
+
+struct LinkedList *temp;
+temp = (struct LinkedList *) malloc (SIZE *sizeof(struct LinkedList));
+int i;
+         double AverageWaitTime;
+         int TotalWaitTime = 0;
+  for (i=0; i<SIZE; i++) {
+       temp [i]=process [i];
+struct LinkedList list;
+int a, b ;
+for (a=1; a<SIZE; a++) 
+  }
+
+
 void nonpreemptive ( struct linkedlist process[] )
      {
            File *fptr;
@@ -26,3 +50,5 @@ void nonpreemptive ( struct linkedlist process[] )
                  printf("Error in the file");
                  exit(1);
             }
+
+  
