@@ -24,7 +24,7 @@ void FirstCome (struct LinkedList Process[]){
       if (fpntr == NULL)
       {
        printf ("you have Error. ");
-       exit;
+       exit(1);
       }
 
 }
@@ -38,11 +38,41 @@ int i;
        temp [i]=process [i];
 struct LinkedList list;
 int a, b ;
-for (a=1; a<SIZE; a++) 
+for (a=1; a<SIZE; a++) {
+   for (b = 0; b < SIZE - a; b++){
+        if (temp[b].aTime > temp[b + 1].atime) {
+           list = temp[b];
+           temp[b] = temp[b+1];
+           temp[b+1] = list;
+           }
+      }
+          
+ }
+
+  totalWaitTime = temp [0].wTime = 0;
+
+  for(i = 1; i < SIZE; i++) {
+     temp[i].wTime = (temp[i-1].btime + temp[i-1].aTime + temp[i-1].wTime) - temp[i],aTime;
+totalWaitTime += temp[i].wTime;
+
   }
+
+       averageWaitTime = (double)totalWaitTime/SIZE;
+             fprintf ()fpntr, "%s" ,  " \n  scheduling method first come first serve \n process wat time : \n");
+          for (i=0; i<SIZE; i++)
+          {
+           fprintf(fpntr, "\nP%d:  %d ms" , i+1, temp[i],wTime);
+          }
+         fprintf (fpntr, "\n Average wait time : %f ms\n", averageWaitTime);
+         printf("%s" , "\n output is stored in the output file ");
+         fclose(fpntr);
+
+  } 
+
 
 
 void nonpreemptive ( struct linkedlist process[] )
+
      {
            File *fptr;
            fptr = fopen("output.txt", "C");
@@ -50,5 +80,73 @@ void nonpreemptive ( struct linkedlist process[] )
                  printf("Error in the file");
                  exit(1);
             }
+         Struct LinkedList *temp,list1,list2;
+              temp = (struct LinkedList*) malloc(SIZE*sizeof(struct LinkedList));
+         int i,a,b;
+         int totalWaitTime = 0 ;
+         double averageWaitTime;
 
-  
+        for (i=0; i< size; i++){
+            temp[i] = proccess[i];
+        }
+         for (i=0; i< SIZE; i++) {
+           for (b=1; b<SIZE; b++){
+            if (temp[b]).aTime > tenp[b+1].aTime) {
+
+         
+            list2 = temp[b];
+            temp[b] = temp[b +1];
+            temp[b+1] = list2;
+            }
+           }
+         }
+
+     for (a=2; a<SIZE; a++){
+       for (b = 1; b< SIZE - a+1; b++){
+
+         if (temp[b].bTime >temp[b+1].bTime){
+
+          list = temp[b];
+          temp[b] = temp[b+1];
+          temp[b+1] = list;
+         }
+       }
+
+      totalWaitTime = temp[0].wTime = 0 ;
+     }
+
+       for (i = 1; i< SIZE; i++) {
+       temp[i].wTime = (temp[i-1].bTime + temp[i-1].aTime + temp[i-1].wTime) - temp[i].aTime;
+       totalWaitTime += temp[i].wTime;
+
+       }
+
+     averageWaitTime = (double)totalWaitTime/SIZE;
+
+
+     for (a=1;a<SIZE;a++) {
+
+     for (b=0;b<SIZE-a; b++) {
+      if (temp[b].Name > temp[b+1].Name){
+
+     list = temp[b];
+     temp[b]= temp[b+1];
+     temp[b+1] = list;
+        }
+     }
+ }
+
+  fprintf(fpntr, "%s", " scheduling method : shortest job first (non preemptive)\n process Wait Time :");
+
+  for (i=0; i < SIZE; i++){
+
+   fprintf(fpntr,"\np%d: %d ms", i+1, temp [i].wTime);
+  }
+
+
+
+   fprintf(fpntr, "average wait time is : %f ms " , averageWaitTime);
+   printf( "%s" , "output is in the ouput file ");
+   
+   fclose(fpntr);  
+  }
