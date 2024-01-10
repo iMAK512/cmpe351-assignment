@@ -21,4 +21,8 @@ linkedList;
 void nonpreemptive ( struct linkedlist process[] )
      {
            File *fptr;
-           fptr = fopen("output.txt", "A");
+           fptr = fopen("output.txt", "C");
+            if (fptr==null) {
+                 printf("Error in the file");
+                 exit(1);
+            }
