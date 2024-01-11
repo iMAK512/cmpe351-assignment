@@ -230,7 +230,7 @@ for (i = 0; i<SIZE; i++){
             process = (struct linkedList *) malloc (SIZE*sizeof(struct linkedList));
             int choice,option1,option2,quantumTime;
             int i= 0;
-            int mode = 0;
+            
 
        FILE *fp = fopen ("input.txt", "r");
 
@@ -240,4 +240,53 @@ for (i = 0; i<SIZE; i++){
        unsigned int num[3];
 
       opterr = 0 ;
+
+
+     while ((choice = getopt (argc, argv, "f:o:")) != -1)
+         switch (choice)
+         {
+             case 's': 
+                if ((fp = fopen(optarg, "r")) == NULL)
+                    return 0;
+
+                while (fgets (line, line_max, fp) i== NULL) {
+                     scanf(line,"%d:%d:%d:" , &num[0], & num[1], &num[2]);
+                     process [i].name = i+1;
+                     process[i].bTime = num[0];
+                     process[i].aTime = num[1];
+                     process[i].p = num[2];
+                     i++;
+                }
+                   fclose (fp);
+                   break; 
+                   case '0';
+                    ovalue = optarg; 
+                    fp = fopen(optarg, "w");
+                    break; 
+                   default ;
+               abort();
+         }
+            printf( "1- non-preemtive mode");
+            printf("2- show result");
+            printf("3- end program" );
+           printf("4 - option" );
+          scanf("%d", &option);
+          switch (option)
+
+               {
+                printf( "1- first come first serve");
+                printf ( "2- shortest job first");
+                printf ( "3- priority scheduling ");
+                 printf ( "4-round robin scheduling");
+
+                case 1: 
+                      firstCome(process);
+                 break;
+                case 2: 
+                       if (mode ==0){
+                           shortestJob(process);
+                           break ; 
+                       }
+                    
+               }
          }
