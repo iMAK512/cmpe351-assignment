@@ -20,7 +20,7 @@ linkedList;
 
 void FirstCome (struct LinkedList Process[]){
       File *Fpntr;
-      Fpntr = fopen ("output.txt", "C");
+      Fpntr = fopen ("output.txt", "A");
       if (fpntr == NULL)
       {
        printf ("you have Error. ");
@@ -71,11 +71,11 @@ totalWaitTime += temp[i].wTime;
 
 
 
-void nonpreemptive ( struct linkedlist process[] )
+void shortestJob ( struct linkedlist process[] )
 
      {
            File *fptr;
-           fptr = fopen("output.txt", "C");
+           fptr = fopen("output.txt", "A");
             if (fptr==null) {
                  printf("Error in the file");
                  exit(1);
