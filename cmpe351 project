@@ -150,7 +150,7 @@ void shortestJob ( struct linkedlist process[] )
    
    fclose(fpntr);  
   }
- void Round (struct LinkedList process[], int quantumTime){
+ void Round-robin (struct LinkedList process[], int quantumTimee){
 
   double averageWaitTime; 
   int i,x; 
