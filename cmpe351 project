@@ -283,10 +283,25 @@ for (i = 0; i<SIZE; i++){
                       firstCome(process);
                  break;
                 case 2: 
-                       if (mode ==0){
+                       
                            shortestJob(process);
                            break ; 
-                       }
-                    
+                  case 3: 
+                  fp = fopen (ovalue, "r");
+                  while (fgets (line, LINE_MAX, fb)){
+                     printf(line);
+                  }
+                    break;
+
+                   case 4: 
+                       abort();
+
+                   default : 
+                    printf("please select valid option")
+                    break;
                }
-         }
+         } 
+
+             while (option != 5);
+         return 0 ;
+  }
