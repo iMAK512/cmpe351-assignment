@@ -150,3 +150,94 @@ void nonpreemptive ( struct linkedlist process[] )
    
    fclose(fpntr);  
   }
+ void Round (struct LinkedList process[], int quantumTime){
+
+  double averageWaitTime; 
+  int i,x; 
+  int y=0;
+  int currentTime = 0;
+  int totalWaitTime = 0; 
+  int resumeStatus = 0;
+  struct linkedList *temp1, *temp2;
+  temp1 = (struct linkedList *) malloc (size *sizeof(struct linkedList));
+  temp2 = (struct linkedList *) malloc (size *sizeof(struct linkedList));
+
+  File *fpntr; 
+fpntr = fopen ("output.txt", "A");
+if (fpntr == NULL){
+      printf ("You Have Error");
+      exit (1);
+}
+ for (i=0; i<SIZE; i++)
+    temp[i]=process [i];
+
+struct linkedList list;
+int a,b;
+for (a=1; a<SIZE; a++){
+   for (b=a; b<SIZE-a; b++){
+     if (temp1[b].aTime > temp1[b + 1].aTime){
+      list = temp1[b];
+      temp1[b] = temp1[b+1];
+      temp1[b+1] = list;
+     }
+   }
+}
+
+
+  for (i=0; i<SIZE; i++)
+    temp2[i] = temp1[i];
+
+  do{
+     if (y>SIZE-1){y=0}
+
+    x=0;
+    while (x<quantumTime && temp1[y].bTime > 0 ){
+       currentTime++;
+       x++;
+       temp1[y].bTime--;
+
+    }
+    if (temp1[y].bTime <= 0 && temp1[y].sr != 1){
+       temp1[y].wTime = cuurrentTime - temp2[y].bTime - temp1[y].aTime;
+       resumeStatus++;
+       temp1[y].sr = 1;
+       totalWaitTime = totalWaitTime + temp1 [y].wTime;
+       
+    }
+
+   y++; 
+
+  } 
+ while (resumeStatus <SIZE );
+
+averageWaitTime = (double)totalWaitTime/SIZE;
+
+fprintf (fpntr , "%s" , "scheduling method is : rounding \n process wait time is : ")
+fprintf (fpntr , "Average Wait time : %f ", averageWaitTime);
+fprintf (fpntr , "scheduling method : first come first serve");
+
+for (i = 0; i<SIZE; i++){
+      fprintf (fpntr, "p%d: %d ", i+1, temp[i].wTime);
+}
+  fprintf (fpntr, "average wait time %f" , averageWaitTime);
+  printf ("%s", "rsult is in output file);
+  fclose (fpntr);
+ }
+
+    int main (int agrc, char **argv)
+         {
+            struct linkedList *process;
+            process = (struct linkedList *) malloc (SIZE*sizeof(struct linkedList));
+            int choice,option1,option2,quantumTime;
+            int i= 0;
+            int mode = 0;
+
+       FILE *fp = fopen ("input.txt", "r");
+
+
+       char line [line_max];
+       char *ovalue = NULL;
+       unsigned int num[3];
+
+      opterr = 0 ;
+         }
