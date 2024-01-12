@@ -10,9 +10,9 @@ struct linkedList {
     	int Name; 
     	int bTime;
     	int aTime; 
-    	int wTime; //Waiting Time
-    	int p; //Priority    	
-    	int sr; //Show Result
+    	int wTime;
+    	int p;
+    	int sr;
 		
 }
 
@@ -253,7 +253,11 @@ void SJFS_preemptive(struct linkedList process[])
     fclose(fptr);
 }
 
+
+
 void PS_preemptive(struct linkedList process[], FILE *fp
+
+
 
 ){
     struct linkedList *temp;
@@ -334,6 +338,7 @@ void PS_preemptive(struct linkedList process[], FILE *fp
     fclose(fptr);
 }
 
+
 void PS_nonpreemptive(struct linkedList process[]){
     struct linkedList *temp;
     temp = (struct linkedList *) malloc (SIZE*sizeof(struct linkedList));
@@ -390,11 +395,13 @@ void PS_nonpreemptive(struct linkedList process[]){
         }
     }
 
+
     fprintf(fptr , "%s" , "\nScheduling Method : Priority Scheduling (Non-Preemptive)\nProcess Waiting Times:");
 
     for(i = 0; i < SIZE; i++) {
         fprintf(fptr , "\nP%d: %d ms", i+1, temp[i].wTime);
     }
+
    
     fprintf(fptr,"\nAverage waiting time: %f ms\n",averageWaitingTime);
     printf("%s" ,"\nOutput is stored in the output file \n");
@@ -473,6 +480,8 @@ void RR(struct linkedList process[], int quantumTime){
     fclose(fptr);
 }
 
+
+
 int main(int argc, char **argv) 
 
 	{
@@ -529,11 +538,11 @@ int main(int argc, char **argv)
             printf("\nMODE : Non-Preemptive\n"); 
             
             
-        printf("1) Scheduling Method (None)\n");
-        printf("2) Preemptive Mode\n");
-        printf("3) Non-Preemptive Mode\n");
-        printf("4) Show Result\n");
-        printf("5) End Program\n");
+        printf("1- Scheduling Method (None)\n");
+        printf("2- Preemptive Mode\n");
+        printf("3- Non-Preemptive Mode\n");
+        printf("4- Show Result\n");
+        printf("5- End Program\n");
         printf("Option> ");
         scanf("%d",&option);
         switch (option)
