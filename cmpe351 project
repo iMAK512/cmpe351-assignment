@@ -555,11 +555,11 @@ int main(int argc, char **argv)
                 else if (mode == 1)
                     printf("\nMODE : Non-Preemptive\n"); 
                     
-                printf("1) First Come, First Served Scheduling\n");
-                printf("2) Shortest-Job-First Scheduling\n");
-                printf("3) Priority Scheduling\n");
-                printf("4) Round-Robin Scheduling\n");
-                printf("5) Back\n");
+                printf("1- First Come, First Served Scheduling\n");
+                printf("2- Shortest-Job-First Scheduling\n");
+                printf("3- Priority Scheduling\n");
+                printf("4- Round-Robin Scheduling\n");
+                printf("5- Back\n");
                 printf("\n\n");
                 printf("Option> ");
                 
